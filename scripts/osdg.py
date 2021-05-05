@@ -23,7 +23,7 @@ for text in texts:
             result.append(item['sdg'])
     results.append(result)
            
-df['SDG'] = results
-df = df[df['SDG']!=""]
+df['OSDG'] = results
+#df = df[df['OSDG']!=""]
 
 df.to_csv(sys.argv[2], index=False)

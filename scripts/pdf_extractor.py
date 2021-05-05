@@ -16,5 +16,5 @@ for i in range(n_pages):
             n_words = len(text.split())
             data.append([page, bbox, n_words, text])
     
-df = pd.DataFrame(data, columns=['page', 'bbox', 'text length', 'text'])
+df = pd.DataFrame(data, columns=['page', 'bbox', 'text_length', 'text'])
 df.to_csv(sys.argv[2], index_label = 'id')

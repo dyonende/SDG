@@ -29,7 +29,7 @@ for article in data:
             if i.startswith("href"):
                 i = i.split('"')[1][1:]
                 link = domain + i
-                r = requests.get(link, allow_redirects=True, cookies=cookies)
+                r = requests.get(link, allow_redirects=True, cookies=cookies, timeout=100)
                 link = r.url
                 if link.startswith('https://news.google.com/publications/')==False:
                     links.add(link)   
@@ -39,16 +39,3 @@ for article in data:
             print("error", link, file=sys.stderr)
 for link in links:
     print(link)
-
-'''
-#API_key = '0a0336b224be453991c97d37055e064f'
-
-url = ('https://newsapi.org/v2/everything?'
-       f'q={sys.argv[1]}&'
-       'apiKey=0a0336b224be453991c97d37055e064f')
-       
-response = requests.get(url)
-obj = json.loads(response.content.decode('UTF-8'))
-
-print(json.dumps(obj, indent=4))
-'''

@@ -23,20 +23,12 @@ for link in links:
         article.parse()
         if article.text.lower().find("cookie") == -1 and article.text.lower().find("javascript") == -1 and article.title.lower().find("subscribe to read")==-1:
             for text in article.text.split('\n'):
-                data.append([link, article.title, len(text.split()), text])
-        
-        '''
-        title, content = article_parser.parse(url=link)
-        print(title)
-        print('----------------')
-        print(content)
-        input()
-        '''
+                data.append([link, article.title, len(text.split()), text])        
     except KeyboardInterrupt:
         sys.exit()
     except:
         print("error:", link, file=sys.stderr)
         
-df = pd.DataFrame(data, columns=['link', 'title', 'text length', 'text'])
+df = pd.DataFrame(data, columns=['link', 'title', 'text_length', 'text'])
 df = df.drop_duplicates(subset=['text'])
 df.to_csv(sys.argv[2], index_label='id')
