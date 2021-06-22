@@ -1,3 +1,11 @@
+"""
+filter all text that is short than 20 tokens and remove
+duplicates
+
+Arg1:   csv with column 'text_length' and 'text'
+Arg2:   output file
+"""
+
 import pandas as pd
 import sys
 

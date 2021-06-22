@@ -1,3 +1,9 @@
+"""
+Use the Aurora queries from the queries scripts for SDG-classification
+
+Arg1:   csv with text in 'text' column
+"""
+
 import requests
 import sys
 import pandas as pd
@@ -54,7 +60,6 @@ for text in texts:
     results.append(result)
            
 df['aurora'] = results
-#df = df[df['aurora']!=""]
 
 df.to_csv(sys.argv[2], index=False)
 

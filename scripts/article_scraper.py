@@ -1,3 +1,10 @@
+"""
+Scrape paragraphs of news articles from list of links
+
+Arg1:   file with url on each line
+Arg1:   csv with scraped data
+"""
+
 import sys
 import requests
 from bs4 import BeautifulSoup
@@ -21,8 +28,10 @@ for link in links:
         article = Article(link)
         article.download()    
         article.parse()
+        
+        #filter out cookie or pay walls
         if article.text.lower().find("cookie") == -1 and article.text.lower().find("javascript") == -1 and article.title.lower().find("subscribe to read")==-1:
-            for text in article.text.split('\n'):
+            for text in article.text.split('\n'):   #split in paragraphs
                 data.append([link, article.title, len(text.split()), text])        
     except KeyboardInterrupt:
         sys.exit()
