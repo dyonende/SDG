@@ -1,4 +1,5 @@
 # Text Mining for Sustainability: Detecting Corporate Greenwashing with The Sustainable Development Goals
+This repository is part of the Master's thesis [Text Mining for Sustainability: Detecting Corporate Greenwashing with The Sustainable Development Goals](https://github.com/dyonende/SDG/blob/master/SDG_Thesis.pdf) and hosts all the tools that were used in the reseach.
 
 ## [scripts](https://github.com/dyonende/SDG/tree/master/scripts)
 The following scripts were used for my thesis.
