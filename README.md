@@ -29,7 +29,7 @@ Label text with OSDG classifier. Requires that the OSDG docker container is runn
 Combines the output of aurora and OSDG from two columns into an extra column.
 
 8. [sentiment.py](https://github.com/dyonende/SDG/blob/master/scripts/sentiment.py)
-Add a column with a senitment score from VADER.
+Add a column with a sentiment score from VADER.
 
 ## [links](https://github.com/dyonende/SDG/tree/master/links)
 This folder contains files with all the links to news articles that were used for the research.
